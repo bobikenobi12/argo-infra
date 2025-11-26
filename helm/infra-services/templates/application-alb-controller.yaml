@@ -1,0 +1,36 @@
+{{- if index .Values "infra-services" "aws_loadbalancer_enabled" }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alb-controller
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  # Add this finalizer ONLY if you want these to cascade delete.
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: infra
+  source:
+    repoURL: https://aws.github.io/eks-charts
+    targetRevision: {{ index .Values "infra-services" "aws-load-balancer-controller-version" }}
+    chart: aws-load-balancer-controller
+    helm:
+      values: |
+        region: {{ index .Values "infra-services" "region" }}
+        vpcID: {{ index .Values "infra-services" "vpc_id" }}
+        clusterName: {{ index .Values "infra-services" "eks_cluster_name" }}
+        serviceAccount:
+          name: "aws-load-balancer-controller-sa"
+          annotations:
+            eks.amazonaws.com/role-arn: arn:aws:iam::{{ index .Values "infra-services" "aws_account_id" }}:role/aws-load-balancer-controller-{{ index .Values "infra-services" "eks_cluster_name" }}
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  revisionHistoryLimit: 3
+{{- end }}
