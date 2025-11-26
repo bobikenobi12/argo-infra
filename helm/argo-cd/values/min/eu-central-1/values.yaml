@@ -4,3 +4,5 @@ server:
       external-dns.alpha.kubernetes.io/hostname: diplom-eu-central-1-argocd-min.education.itgix.eu
     hosts:
     - diplom-eu-central-1-argocd-min.education.itgix.eu
+    - argocd.education.itgix.eu
+    
