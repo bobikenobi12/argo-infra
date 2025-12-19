@@ -1,0 +1,7 @@
+external-dns:
+  fullnameOverride: "external-dns"
+  interval: 30m
+  policy: sync
+  provider: aws
+  registry: txt
+  triggerLoopOnEvent: true
