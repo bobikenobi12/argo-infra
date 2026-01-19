@@ -25,7 +25,7 @@ infra-services:
   enable_karpenter: true
   env_git_repo: git@github.com:bobikenobi12/demo-adp-project-tf.git
   env_template_repo: git@github.com:itgix/adp-tf-envtempl-standard.git
-  env_template_repo_branch: v1.2.5
+  env_template_repo_branch: v1.2.6
   environment: min
   external_dns_enabled: true
   fluentbit_sa_role_arn: arn:aws:iam::787587782604:role/irsa-fluentbit-cloudwatch-eks-ec1-min-diplom
