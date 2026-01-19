@@ -19,7 +19,7 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: git@github.com:bobikenobi12/argo-infra.git
+    repoURL: https://github.com/bobikenobi12/argo-infra.git
     targetRevision: HEAD  # For Helm, this refers to the chart version.
     path: guestbook  # This has no meaning for Helm charts pulled directly from a Helm repo instead of git.
 

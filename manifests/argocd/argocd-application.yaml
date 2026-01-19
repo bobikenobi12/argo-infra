@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:bobikenobi12/argo-infra.git
+    repoURL: https://github.com/bobikenobi12/argo-infra.git
     targetRevision: HEAD
     path: helm/argo-cd
     helm:

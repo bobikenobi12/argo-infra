@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: manifests/applications
-    repoURL:  git@github.com:bobikenobi12/argo-infra.git
+    repoURL:  https://github.com/bobikenobi12/argo-infra.git
     targetRevision: HEAD
   project: infra
   syncPolicy:

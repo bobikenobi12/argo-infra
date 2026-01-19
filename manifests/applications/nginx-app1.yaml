@@ -12,5 +12,5 @@ spec:
   project: default
   source:
     path: manifests/deployments
-    repoURL: git@github.com:bobikenobi12/argo-infra.git
+    repoURL: https://github.com/bobikenobi12/argo-infra.git
     targetRevision: HEAD

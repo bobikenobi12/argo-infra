@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   sources:
-  - repoURL: git@github.com:bobikenobi12/argo-infra.git
+  - repoURL: https://github.com/bobikenobi12/argo-infra.git
     targetRevision: HEAD
     path: helm/infra-services
     helm:

@@ -23,13 +23,13 @@ infra-services:
   eks_irsa_external_dns_arn: arn:aws:iam::787587782604:role/eks-ec1-min-diplom-external-dns
   enable_fluent_bit: true
   enable_karpenter: true
-  env_git_repo: git@github.com:bobikenobi12/demo-adp-project-tf.git
+  env_git_repo: https://github.com/bobikenobi12/demo-adp-project-tf.git
   env_template_repo: git@github.com:itgix/adp-tf-envtempl-standard.git
   env_template_repo_branch: v1.2.6
   environment: min
   external_dns_enabled: true
   fluentbit_sa_role_arn: arn:aws:iam::787587782604:role/irsa-fluentbit-cloudwatch-eks-ec1-min-diplom
-  gitops_destination_repo: git@github.com:bobikenobi12/argo-infra.git
+  gitops_destination_repo: https://github.com/bobikenobi12/argo-infra.git
   gitops_template_repo: git@github.com:itgix/adp-k8s-templ-argoinfrasvcs.git
   gitops_template_repo_branch: v1.2.3
   karpenter_queue_name: queue-eu-central-1-min-karpenter
